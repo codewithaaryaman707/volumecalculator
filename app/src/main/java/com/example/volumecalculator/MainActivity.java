@@ -50,32 +50,26 @@ public class MainActivity extends AppCompatActivity {
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent i = new Intent(getApplicationContext(), Sphere.class);
-                    startActivity(i);
+                    if(position==0)
+                    {
+                        Intent inext = new Intent(MainActivity.this,Sphere.class);
+                        startActivity(inext);
+                    }
+                    else if(position==1)
+                    {
+                        Intent inext = new Intent(MainActivity.this,Cube.class);
+                        startActivity(inext);
+                    }
+                    else if(position==2)
+                    {
+                        Intent inext = new Intent(MainActivity.this,Cylinder.class);
+                        startActivity(inext);
+                    }
+                    else if(position==3){
+                        Intent inext = new Intent(MainActivity.this,Prism.class);
+                        startActivity(inext);
 
-                }
-            });
-            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent j = new Intent(getApplicationContext(), Cylinder.class);
-                    startActivity(j);
-                }
-            });
-
-            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent k = new Intent(getApplicationContext(), Prism.class);
-                    startActivity(k);
-                }
-            });
-
-            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent l = new Intent(getApplicationContext(), Cube.class);
-                    startActivity(l);
+                    }
                 }
             });
 

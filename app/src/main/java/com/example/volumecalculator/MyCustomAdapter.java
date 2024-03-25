@@ -72,4 +72,16 @@ public class MyCustomAdapter extends ArrayAdapter<Shape> {
         return convertView;
 
     }
+    @Override
+    public int getPosition(@Nullable Shape item) {
+        if (item.getShapeName().equals("Sphere"))
+            return 0;
+        else if (item.getShapeName().equals("Cube"))
+            return 1;
+        else if (item.getShapeName().equals("Cylinder"))
+            return 3;
+        else if (item.getShapeName().equals("Prisim"))
+            return 4;
+        return -1;
+    }
 }

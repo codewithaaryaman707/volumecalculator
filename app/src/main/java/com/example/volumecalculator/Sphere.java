@@ -14,9 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Sphere extends AppCompatActivity {
 
-    EditText textSphere;
-    TextView txt, txtSphere;
-    Button btn;
+    EditText editText_SphereRadius;
+    TextView textView_Title, textView_result_sphere;
+    Button btn_sphere;
 
 
     @Override
@@ -25,26 +25,25 @@ public class Sphere extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sphere);
 
-        textSphere = findViewById(R.id.text_sphere);
-        txt = findViewById(R.id.textView);
-        txtSphere = findViewById(R.id.result_sphere);
-        btn = findViewById(R.id.btn);
+        editText_SphereRadius = findViewById(R.id.sphere_radius);
+        textView_result_sphere= findViewById(R.id.result_sphere);
+        textView_Title = findViewById(R.id.textView_title);
+        btn_sphere = findViewById(R.id.btn_sphere);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn_sphere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Volume is (4/3) * pi * r^3
-                String radius = textSphere.getText().toString();
+                String radius = editText_SphereRadius.getText().toString();
 
                 int r = Integer.parseInt(radius);
 
                 double volume = (4/3) * 3.14159 * r*r*r;
 
-                textSphere.setText("V = " +volume+ "m^3");
+                textView_result_sphere.setText("V = " +volume+ "m^3");
 
             }
         });
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
